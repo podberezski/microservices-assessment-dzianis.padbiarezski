@@ -1,0 +1,22 @@
+2026-06-16 13:28:31.446 [Test worker] INFO  c.l.n.NotificationServiceApplicationTests trace=,span= - Starting NotificationServiceApplicationTests using Java 25.0.2 with PID 50553 (started by Dzianis_Padbiarezski in /Users/Dzianis_Padbiarezski/projects/loadup/microservices-assessment-dzianis.padbiarezski/notification-service)
+2026-06-16 13:28:31.450 [Test worker] INFO  c.l.n.NotificationServiceApplicationTests trace=,span= - No active profile set, falling back to 1 default profile: "default"
+2026-06-16 13:28:31.575 [background-preinit] INFO  o.h.validator.internal.util.Version trace=,span= - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-16 13:28:31.831 [Test worker] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor trace=,span= - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2026-06-16 13:28:31.843 [Test worker] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor trace=,span= - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2026-06-16 13:28:33.038 [Test worker] INFO  o.s.c.s.m.DirectWithAttributesChannel trace=,span= - Channel 'application.orderUpdateConsumer-in-0' has 1 subscriber(s).
+2026-06-16 13:28:33.078 [Test worker] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-06-16 13:28:33.079 [Test worker] INFO  o.s.i.c.PublishSubscribeChannel trace=,span= - Channel 'application.errorChannel' has 1 subscriber(s).
+2026-06-16 13:28:33.079 [Test worker] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - started bean '_org.springframework.integration.errorLogger'
+2026-06-16 13:28:33.082 [Test worker] INFO  o.s.c.s.binder.BinderErrorChannel trace=,span= - Channel '2083660714.orderUpdateConsumer-in-0.errors' has 1 subscriber(s).
+2026-06-16 13:28:33.083 [Test worker] INFO  o.s.c.s.binder.BinderErrorChannel trace=,span= - Channel '2083660714.orderUpdateConsumer-in-0.errors' has 2 subscriber(s).
+2026-06-16 13:28:33.085 [Test worker] INFO  o.s.i.c.PublishSubscribeChannel trace=,span= - Channel 'orderUpdateConsumer-in-0.destination' has 1 subscriber(s).
+2026-06-16 13:28:33.085 [Test worker] INFO  o.s.c.s.b.t.TestChannelBinder$IntegrationBinderInboundChannelAdapter trace=,span= - started org.springframework.cloud.stream.binder.test.TestChannelBinder$IntegrationBinderInboundChannelAdapter@64f2b1b4
+2026-06-16 13:28:33.098 [Test worker] INFO  c.l.n.NotificationServiceApplicationTests trace=,span= - Started NotificationServiceApplicationTests in 1.887 seconds (process running for 2.593)
+2026-06-16 13:28:33.197 [Test worker] INFO  c.l.n.m.OrderNotificationListener trace=trace-1,span= - Received order event: OrderEventMessage[tenantId=tenant-1, orderId=order-42, status=CONFIRMED]
+2026-06-16 13:28:33.202 [Test worker] INFO  c.l.n.m.OrderNotificationListener trace=trace-1,span= - Order event acknowledged.
+2026-06-16 13:28:33.210 [SpringApplicationShutdownHook] INFO  o.s.c.s.b.t.TestChannelBinder$IntegrationBinderInboundChannelAdapter trace=,span= - stopped org.springframework.cloud.stream.binder.test.TestChannelBinder$IntegrationBinderInboundChannelAdapter@64f2b1b4
+2026-06-16 13:28:33.227 [SpringApplicationShutdownHook] INFO  o.s.c.s.binder.BinderErrorChannel trace=,span= - Channel 'application.2083660714.orderUpdateConsumer-in-0.errors' has 1 subscriber(s).
+2026-06-16 13:28:33.227 [SpringApplicationShutdownHook] INFO  o.s.c.s.binder.BinderErrorChannel trace=,span= - Channel 'application.2083660714.orderUpdateConsumer-in-0.errors' has 0 subscriber(s).
+2026-06-16 13:28:33.228 [SpringApplicationShutdownHook] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-06-16 13:28:33.229 [SpringApplicationShutdownHook] INFO  o.s.i.c.PublishSubscribeChannel trace=,span= - Channel 'application.errorChannel' has 0 subscriber(s).
+2026-06-16 13:28:33.229 [SpringApplicationShutdownHook] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - stopped bean '_org.springframework.integration.errorLogger'

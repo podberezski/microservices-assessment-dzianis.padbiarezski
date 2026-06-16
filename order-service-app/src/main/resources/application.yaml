@@ -1,0 +1,95 @@
+spring:
+  application:
+    name: order-service
+  cloud:
+    stream:
+      source: orderEvents
+      bindings:
+        orderEvents-out-0:
+          destination: ${app.kafka.order-events.topic}
+          content-type: application/json
+      kafka:
+        binder:
+          brokers: ${app.kafka.order-events.bootstrap-servers}
+        bindings:
+          orderEvents-out-0:
+            producer:
+              sync: false
+              configuration:
+                # Bound how long send can block while waiting for metadata/buffer.
+                max.block.ms: 3000
+                # Keep retries conservative; total retry duration is capped by delivery.timeout.ms.
+                retries: 2
+                retry.backoff.ms: 200
+                delivery.timeout.ms: 5000
+                request.timeout.ms: 2000
+                reconnect.backoff.ms: 500
+                reconnect.backoff.max.ms: 2000
+  threads:
+    virtual:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:orderdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+management:
+  health:
+    kafka:
+      enabled: true
+    binders:
+      enabled: true
+  otlp:
+    metrics:
+      export:
+        enabled: false
+
+logging:
+  level:
+    org.apache.kafka.clients.NetworkClient: INFO
+    org.apache.kafka.clients.admin.KafkaAdminClient: ERROR
+
+app:
+  kafka:
+    order-events:
+      binding-name: orderEvents-out-0
+      topic: order-events
+      bootstrap-servers: localhost:9092
+
+resilience4j:
+  retry:
+    instances:
+      orderCacheRetry:
+        max-attempts: 3
+        wait-duration: 100ms
+        retry-exceptions:
+          - java.lang.IllegalStateException
+          - org.springframework.dao.DataAccessException
+        ignore-exceptions:
+          - io.github.resilience4j.circuitbreaker.CallNotPermittedException
+  circuitbreaker:
+    instances:
+      orderCacheCircuitBreaker:
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 20
+        minimum-number-of-calls: 10
+        failure-rate-threshold: 50
+        slow-call-rate-threshold: 100
+        slow-call-duration-threshold: 500ms
+        wait-duration-in-open-state: 30s
+        permitted-number-of-calls-in-half-open-state: 3
+        automatic-transition-from-open-to-half-open-enabled: true
+

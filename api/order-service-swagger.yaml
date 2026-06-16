@@ -1,0 +1,401 @@
+openapi: 3.0.3
+info:
+  title: Order Service API
+  version: 1.0.0
+  description: Contract for multi-tenant order management with create, update, and cancel operations.
+servers:
+  - url: /api/v1
+paths:
+  /tenants/{tenantId}/orders:
+    post:
+      tags:
+        - Order
+      operationId: createOrder
+      summary: Create an order
+      description: Accept and persist a new order for a customer in the tenant context.
+      parameters:
+        - name: tenantId
+          in: path
+          required: true
+          description: Tenant identifier
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOrderRequest'
+            example:
+              customer:
+                customerId: cust-9001
+                communicationPreference: EMAIL
+                email: customer@loadup.com
+                address: 742 Evergreen Terrace, Springfield
+              currency: USD
+              notes: Leave at front desk
+              items:
+                - sku: SKU-BOOK-001
+                  name: Domain-Driven Design
+                  quantity: 1
+                  unitPrice: 44.99
+                - sku: SKU-MOUSE-002
+                  name: Wireless Mouse
+                  quantity: 2
+                  unitPrice: 19.50
+      responses:
+        '201':
+          description: Order created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+              example:
+                tenantId: tenant-acme
+                orderId: ord-8f6b63a1
+                customerId: cust-9001
+                status: CREATED
+                currency: USD
+                totalAmount: 83.99
+                items:
+                  - sku: SKU-BOOK-001
+                    name: Domain-Driven Design
+                    quantity: 1
+                    unitPrice: 44.99
+                  - sku: SKU-MOUSE-002
+                    name: Wireless Mouse
+                    quantity: 2
+                    unitPrice: 19.50
+                createdAt: '2026-06-12T08:15:30Z'
+                updatedAt: '2026-06-12T08:15:30Z'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /tenants/{tenantId}/orders/{orderId}:
+    patch:
+      tags:
+        - Order
+      operationId: updateOrder
+      summary: Update an order status
+      description: Update an order through lifecycle statuses. Backward transitions and transitions from CANCELLED are rejected.
+      parameters:
+        - name: tenantId
+          in: path
+          required: true
+          description: Tenant identifier
+          schema:
+            type: string
+        - name: orderId
+          in: path
+          required: true
+          description: Order identifier
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateOrderRequest'
+            example:
+              targetStatus: PAID
+              version: 3
+              notes: Payment authorized
+      responses:
+        '200':
+          description: Order updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+              example:
+                tenantId: tenant-acme
+                orderId: ord-8f6b63a1
+                customerId: cust-9001
+                status: PAID
+                currency: USD
+                totalAmount: 83.99
+                items:
+                  - sku: SKU-BOOK-001
+                    name: Domain-Driven Design
+                    quantity: 1
+                    unitPrice: 44.99
+                  - sku: SKU-MOUSE-002
+                    name: Wireless Mouse
+                    quantity: 2
+                    unitPrice: 19.50
+                createdAt: '2026-06-12T08:15:30Z'
+                updatedAt: '2026-06-12T08:25:06Z'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+  /tenants/{tenantId}/orders/{orderId}/cancel:
+    post:
+      tags:
+        - Order
+      operationId: cancelOrder
+      summary: Cancel an order
+      description: Cancel an order when status is CREATED, CONFIRMED, or PAID. Cancellation is rejected for SHIPPED, DELIVERED, or already CANCELLED orders.
+      parameters:
+        - name: tenantId
+          in: path
+          required: true
+          description: Tenant identifier
+          schema:
+            type: string
+        - name: orderId
+          in: path
+          required: true
+          description: Order identifier
+          schema:
+            type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CancelOrderRequest'
+            example:
+              reasonCode: CUSTOMER_REQUEST
+              reasonText: Customer changed shipping address and requested cancellation
+              requestedBy: support.agent@loadup.com
+      responses:
+        '200':
+          description: Order cancelled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+              example:
+                tenantId: tenant-acme
+                orderId: ord-8f6b63a1
+                customerId: cust-9001
+                status: CANCELLED
+                currency: USD
+                totalAmount: 83.99
+                items:
+                  - sku: SKU-BOOK-001
+                    name: Domain-Driven Design
+                    quantity: 1
+                    unitPrice: 44.99
+                  - sku: SKU-MOUSE-002
+                    name: Wireless Mouse
+                    quantity: 2
+                    unitPrice: 19.50
+                createdAt: '2026-06-12T08:15:30Z'
+                updatedAt: '2026-06-12T08:40:55Z'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+components:
+  responses:
+    BadRequest:
+      description: Invalid request payload, missing required fields, or malformed input.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            code: INVALID_REQUEST
+            message: Validation failed for request body.
+            details:
+              - customerId must not be blank
+              - items must not be empty
+            timestamp: '2026-06-12T08:15:30Z'
+            traceId: 75bfa3de01484f31
+    NotFound:
+      description: Resource not found (tenant, customer, or order).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            code: RESOURCE_NOT_FOUND
+            message: Order ord-8f6b63a1 was not found for tenant tenant-acme.
+            details:
+              - Verify tenantId and orderId values
+            timestamp: '2026-06-12T08:20:02Z'
+            traceId: 6f86b7db9de94a43
+    Conflict:
+      description: Request conflicts with the current state of the resource.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            code: STATE_CONFLICT
+            message: Order cannot be modified because the provided version is stale.
+            details:
+              - Current version is 4
+            timestamp: '2026-06-12T08:26:18Z'
+            traceId: 2f13c219799147ef
+    UnprocessableEntity:
+      description: Business rule validation failed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            code: ORDER_STATUS_TRANSITION_NOT_ALLOWED
+            message: Cannot transition order from SHIPPED to PAID.
+            details:
+              - Allowed transitions from SHIPPED are DELIVERED only
+            timestamp: '2026-06-12T08:33:44Z'
+            traceId: 1d17791cfc3a4953
+  schemas:
+    CreateOrderRequest:
+      type: object
+      required:
+        - customer
+        - currency
+        - items
+      properties:
+        customer:
+          $ref: '#/components/schemas/Customer'
+        currency:
+          type: string
+          example: USD
+        notes:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderItem'
+    Customer:
+      type: object
+      required:
+        - communicationPreference
+      properties:
+        customerId:
+          type: string
+        communicationPreference:
+          $ref: '#/components/schemas/CommunicationPreference'
+        address:
+          type: string
+        email:
+          type: string
+          format: email
+    CommunicationPreference:
+      type: string
+      enum:
+        - EMAIL
+        - MAIL
+    UpdateOrderRequest:
+      type: object
+      required:
+        - targetStatus
+      properties:
+        targetStatus:
+          $ref: '#/components/schemas/OrderStatus'
+        version:
+          type: integer
+          format: int64
+          description: Expected version for optimistic locking
+        notes:
+          type: string
+    CancelOrderRequest:
+      type: object
+      properties:
+        reasonCode:
+          type: string
+          example: CUSTOMER_REQUEST
+        reasonText:
+          type: string
+        requestedBy:
+          type: string
+    OrderResponse:
+      type: object
+      required:
+        - tenantId
+        - orderId
+        - status
+        - createdAt
+      properties:
+        tenantId:
+          type: string
+        orderId:
+          type: string
+        customerId:
+          type: string
+        status:
+          $ref: '#/components/schemas/OrderStatus'
+        currency:
+          type: string
+        totalAmount:
+          type: number
+          format: double
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderItem'
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+    OrderItem:
+      type: object
+      required:
+        - sku
+        - quantity
+        - unitPrice
+      properties:
+        sku:
+          type: string
+        name:
+          type: string
+        quantity:
+          type: integer
+          format: int32
+          minimum: 1
+        unitPrice:
+          type: number
+          format: double
+    ErrorResponse:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: string
+          example: ORDER_STATUS_TRANSITION_NOT_ALLOWED
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: string
+        timestamp:
+          type: string
+          format: date-time
+        traceId:
+          type: string
+    OrderStatus:
+      type: string
+      enum:
+        - CREATED
+        - CONFIRMED
+        - PAID
+        - FULFILLED
+        - SHIPPED
+        - DELIVERED
+        - CANCELLED
+        - UPDATED
+        - COMPLETED
+        - FAILED
+

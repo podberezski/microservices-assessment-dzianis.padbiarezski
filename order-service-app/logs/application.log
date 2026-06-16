@@ -1,0 +1,153 @@
+2026-06-16 11:22:14.796 [Test worker] INFO  c.l.o.OrderServiceApplicationTests trace=,span= - Starting OrderServiceApplicationTests using Java 25.0.2 with PID 9406 (started by Dzianis_Padbiarezski in /Users/Dzianis_Padbiarezski/projects/loadup/order-service/order-service-app)
+2026-06-16 11:22:14.798 [Test worker] INFO  c.l.o.OrderServiceApplicationTests trace=,span= - No active profile set, falling back to 1 default profile: "default"
+2026-06-16 11:22:15.001 [background-preinit] INFO  o.h.validator.internal.util.Version trace=,span= - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-16 11:22:15.573 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace=,span= - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-16 11:22:15.669 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace=,span= - Finished Spring Data repository scanning in 88 ms. Found 1 JPA repository interface.
+2026-06-16 11:22:15.888 [Test worker] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor trace=,span= - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2026-06-16 11:22:15.892 [Test worker] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor trace=,span= - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2026-06-16 11:22:16.329 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Starting...
+2026-06-16 11:22:16.460 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool trace=,span= - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:8eeccdc7-2703-4898-b106-9ea3b76a4b4c user=SA
+2026-06-16 11:22:16.461 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Start completed.
+2026-06-16 11:22:16.588 [Test worker] INFO  org.hibernate.orm.jpa trace=,span= - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-16 11:22:16.641 [Test worker] INFO  org.hibernate.orm.core trace=,span= - HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-16 11:22:16.848 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo trace=,span= - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-16 11:22:16.904 [Test worker] INFO  o.hibernate.orm.connections.pooling trace=,span= - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:8eeccdc7-2703-4898-b106-9ea3b76a4b4c]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: 8EECCDC7-2703-4898-B106-9EA3B76A4B4C/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-16 11:22:17.426 [Test worker] INFO  org.hibernate.orm.core trace=,span= - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-16 11:22:17.447 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace=,span= - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-16 11:22:17.720 [Test worker] INFO  o.s.d.j.r.q.QueryEnhancerFactories trace=,span= - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-16 11:22:18.391 [Test worker] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration trace=,span= - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-16 11:22:19.103 [Test worker] WARN  i.m.c.i.b.cache.CaffeineCacheMetrics trace=,span= - The cache 'tenants' is not recording statistics. No meters except 'cache.size' will be registered. Call 'Caffeine#recordStats()' prior to building the cache for metrics to be recorded.
+2026-06-16 11:22:19.106 [Test worker] WARN  i.m.c.i.b.cache.CaffeineCacheMetrics trace=,span= - The cache 'orders' is not recording statistics. No meters except 'cache.size' will be registered. Call 'Caffeine#recordStats()' prior to building the cache for metrics to be recorded.
+2026-06-16 11:22:19.373 [Test worker] WARN  o.s.b.s.a.UserDetailsServiceAutoConfiguration trace=,span= - 
+
+Using generated security password: 5c40c669-bdf4-4c82-92c7-e056b715a9b9
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-16 11:22:19.402 [Test worker] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer trace=,span= - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-16 11:22:19.552 [Test worker] INFO  o.s.b.a.e.web.EndpointLinksResolver trace=,span= - Exposing 1 endpoint beneath base path '/actuator'
+2026-06-16 11:22:19.805 [Test worker] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-06-16 11:22:19.806 [Test worker] INFO  o.s.i.c.PublishSubscribeChannel trace=,span= - Channel 'application.errorChannel' has 1 subscriber(s).
+2026-06-16 11:22:19.806 [Test worker] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - started bean '_org.springframework.integration.errorLogger'
+2026-06-16 11:22:19.817 [Test worker] INFO  c.l.o.OrderServiceApplicationTests trace=,span= - Started OrderServiceApplicationTests in 5.282 seconds (process running for 6.972)
+2026-06-16 11:22:19.868 [Test worker] WARN  o.s.c.events.SpringDocAppInitializer trace=,span= - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-16 11:22:19.868 [Test worker] WARN  o.s.c.events.SpringDocAppInitializer trace=,span= - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-16 11:22:19.962 [SpringApplicationShutdownHook] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-06-16 11:22:19.962 [SpringApplicationShutdownHook] INFO  o.s.i.c.PublishSubscribeChannel trace=,span= - Channel 'application.errorChannel' has 0 subscriber(s).
+2026-06-16 11:22:19.962 [SpringApplicationShutdownHook] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - stopped bean '_org.springframework.integration.errorLogger'
+2026-06-16 11:22:19.970 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace=,span= - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-16 11:22:19.972 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Shutdown initiated...
+2026-06-16 11:22:19.973 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Shutdown completed.
+2026-06-16 11:22:50.665 [Test worker] INFO  c.l.o.OrderServiceApplicationTests trace=,span= - Starting OrderServiceApplicationTests using Java 25.0.2 with PID 9635 (started by Dzianis_Padbiarezski in /Users/Dzianis_Padbiarezski/projects/loadup/order-service/order-service-app)
+2026-06-16 11:22:50.667 [Test worker] INFO  c.l.o.OrderServiceApplicationTests trace=,span= - No active profile set, falling back to 1 default profile: "default"
+2026-06-16 11:22:50.863 [background-preinit] INFO  o.h.validator.internal.util.Version trace=,span= - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-16 11:22:51.572 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace=,span= - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-16 11:22:51.681 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace=,span= - Finished Spring Data repository scanning in 100 ms. Found 1 JPA repository interface.
+2026-06-16 11:22:51.904 [Test worker] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor trace=,span= - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2026-06-16 11:22:51.909 [Test worker] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor trace=,span= - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2026-06-16 11:22:52.395 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Starting...
+2026-06-16 11:22:52.511 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool trace=,span= - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:77596372-8219-48df-ba10-d9dc7212aed0 user=SA
+2026-06-16 11:22:52.512 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Start completed.
+2026-06-16 11:22:52.631 [Test worker] INFO  org.hibernate.orm.jpa trace=,span= - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-16 11:22:52.676 [Test worker] INFO  org.hibernate.orm.core trace=,span= - HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-16 11:22:52.879 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo trace=,span= - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-16 11:22:52.951 [Test worker] INFO  o.hibernate.orm.connections.pooling trace=,span= - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:77596372-8219-48df-ba10-d9dc7212aed0]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: 77596372-8219-48DF-BA10-D9DC7212AED0/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-16 11:22:53.597 [Test worker] INFO  org.hibernate.orm.core trace=,span= - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-16 11:22:53.614 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace=,span= - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-16 11:22:53.950 [Test worker] INFO  o.s.d.j.r.q.QueryEnhancerFactories trace=,span= - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-16 11:22:54.795 [Test worker] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration trace=,span= - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-16 11:22:55.522 [Test worker] WARN  i.m.c.i.b.cache.CaffeineCacheMetrics trace=,span= - The cache 'tenants' is not recording statistics. No meters except 'cache.size' will be registered. Call 'Caffeine#recordStats()' prior to building the cache for metrics to be recorded.
+2026-06-16 11:22:55.524 [Test worker] WARN  i.m.c.i.b.cache.CaffeineCacheMetrics trace=,span= - The cache 'orders' is not recording statistics. No meters except 'cache.size' will be registered. Call 'Caffeine#recordStats()' prior to building the cache for metrics to be recorded.
+2026-06-16 11:22:55.819 [Test worker] WARN  o.s.b.s.a.UserDetailsServiceAutoConfiguration trace=,span= - 
+
+Using generated security password: 76771c3d-9a65-43b3-ad27-0cdf79199d82
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-16 11:22:55.856 [Test worker] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer trace=,span= - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-16 11:22:56.019 [Test worker] INFO  o.s.b.a.e.web.EndpointLinksResolver trace=,span= - Exposing 1 endpoint beneath base path '/actuator'
+2026-06-16 11:22:56.272 [Test worker] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-06-16 11:22:56.272 [Test worker] INFO  o.s.i.c.PublishSubscribeChannel trace=,span= - Channel 'application.errorChannel' has 1 subscriber(s).
+2026-06-16 11:22:56.272 [Test worker] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - started bean '_org.springframework.integration.errorLogger'
+2026-06-16 11:22:56.284 [Test worker] INFO  c.l.o.OrderServiceApplicationTests trace=,span= - Started OrderServiceApplicationTests in 5.889 seconds (process running for 7.613)
+2026-06-16 11:22:56.330 [Test worker] WARN  o.s.c.events.SpringDocAppInitializer trace=,span= - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-16 11:22:56.330 [Test worker] WARN  o.s.c.events.SpringDocAppInitializer trace=,span= - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-16 11:22:56.455 [SpringApplicationShutdownHook] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-06-16 11:22:56.455 [SpringApplicationShutdownHook] INFO  o.s.i.c.PublishSubscribeChannel trace=,span= - Channel 'application.errorChannel' has 0 subscriber(s).
+2026-06-16 11:22:56.455 [SpringApplicationShutdownHook] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - stopped bean '_org.springframework.integration.errorLogger'
+2026-06-16 11:22:56.465 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace=,span= - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-16 11:22:56.468 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Shutdown initiated...
+2026-06-16 11:22:56.470 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Shutdown completed.
+2026-06-16 13:28:38.422 [Test worker] INFO  c.l.o.OrderServiceApplicationTests trace=,span= - Starting OrderServiceApplicationTests using Java 25.0.2 with PID 50595 (started by Dzianis_Padbiarezski in /Users/Dzianis_Padbiarezski/projects/loadup/microservices-assessment-dzianis.padbiarezski/order-service-app)
+2026-06-16 13:28:38.426 [Test worker] INFO  c.l.o.OrderServiceApplicationTests trace=,span= - No active profile set, falling back to 1 default profile: "default"
+2026-06-16 13:28:38.595 [background-preinit] INFO  o.h.validator.internal.util.Version trace=,span= - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-16 13:28:39.218 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace=,span= - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-16 13:28:39.305 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace=,span= - Finished Spring Data repository scanning in 79 ms. Found 1 JPA repository interface.
+2026-06-16 13:28:39.477 [Test worker] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor trace=,span= - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2026-06-16 13:28:39.480 [Test worker] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor trace=,span= - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2026-06-16 13:28:39.923 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Starting...
+2026-06-16 13:28:40.024 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool trace=,span= - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:45470384-d83c-4245-8e89-715a2adfe67a user=SA
+2026-06-16 13:28:40.025 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Start completed.
+2026-06-16 13:28:40.131 [Test worker] INFO  org.hibernate.orm.jpa trace=,span= - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-16 13:28:40.161 [Test worker] INFO  org.hibernate.orm.core trace=,span= - HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-16 13:28:40.325 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo trace=,span= - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-16 13:28:40.372 [Test worker] INFO  o.hibernate.orm.connections.pooling trace=,span= - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:45470384-d83c-4245-8e89-715a2adfe67a]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: 45470384-D83C-4245-8E89-715A2ADFE67A/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-16 13:28:40.806 [Test worker] INFO  org.hibernate.orm.core trace=,span= - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-16 13:28:40.826 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace=,span= - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-16 13:28:41.090 [Test worker] INFO  o.s.d.j.r.q.QueryEnhancerFactories trace=,span= - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-16 13:28:41.730 [Test worker] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration trace=,span= - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-16 13:28:42.455 [Test worker] WARN  i.m.c.i.b.cache.CaffeineCacheMetrics trace=,span= - The cache 'tenants' is not recording statistics. No meters except 'cache.size' will be registered. Call 'Caffeine#recordStats()' prior to building the cache for metrics to be recorded.
+2026-06-16 13:28:42.457 [Test worker] WARN  i.m.c.i.b.cache.CaffeineCacheMetrics trace=,span= - The cache 'orders' is not recording statistics. No meters except 'cache.size' will be registered. Call 'Caffeine#recordStats()' prior to building the cache for metrics to be recorded.
+2026-06-16 13:28:42.720 [Test worker] WARN  o.s.b.s.a.UserDetailsServiceAutoConfiguration trace=,span= - 
+
+Using generated security password: 83ccb499-3f36-4cef-a4bc-02355613ec94
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-16 13:28:42.756 [Test worker] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer trace=,span= - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-16 13:28:42.895 [Test worker] INFO  o.s.b.a.e.web.EndpointLinksResolver trace=,span= - Exposing 1 endpoint beneath base path '/actuator'
+2026-06-16 13:28:43.140 [Test worker] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-06-16 13:28:43.141 [Test worker] INFO  o.s.i.c.PublishSubscribeChannel trace=,span= - Channel 'application.errorChannel' has 1 subscriber(s).
+2026-06-16 13:28:43.141 [Test worker] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - started bean '_org.springframework.integration.errorLogger'
+2026-06-16 13:28:43.156 [Test worker] INFO  c.l.o.OrderServiceApplicationTests trace=,span= - Started OrderServiceApplicationTests in 4.946 seconds (process running for 6.466)
+2026-06-16 13:28:43.208 [Test worker] WARN  o.s.c.events.SpringDocAppInitializer trace=,span= - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-16 13:28:43.208 [Test worker] WARN  o.s.c.events.SpringDocAppInitializer trace=,span= - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-16 13:28:43.297 [SpringApplicationShutdownHook] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-06-16 13:28:43.297 [SpringApplicationShutdownHook] INFO  o.s.i.c.PublishSubscribeChannel trace=,span= - Channel 'application.errorChannel' has 0 subscriber(s).
+2026-06-16 13:28:43.298 [SpringApplicationShutdownHook] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - stopped bean '_org.springframework.integration.errorLogger'
+2026-06-16 13:28:43.305 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace=,span= - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-16 13:28:43.307 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Shutdown initiated...
+2026-06-16 13:28:43.308 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Shutdown completed.

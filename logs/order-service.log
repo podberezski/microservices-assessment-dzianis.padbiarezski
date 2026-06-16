@@ -1,0 +1,52 @@
+2026-06-16 13:30:40.718 [main] INFO  c.l.order.OrderServiceApplication trace=,span= - Starting OrderServiceApplication v0.0.1-SNAPSHOT using Java 25.0.2 with PID 51402 (/Users/Dzianis_Padbiarezski/projects/loadup/microservices-assessment-dzianis.padbiarezski/order-service-app/build/libs/order-service-app-0.0.1-SNAPSHOT.jar started by Dzianis_Padbiarezski in /Users/Dzianis_Padbiarezski/projects/loadup/microservices-assessment-dzianis.padbiarezski)
+2026-06-16 13:30:40.720 [main] INFO  c.l.order.OrderServiceApplication trace=,span= - No active profile set, falling back to 1 default profile: "default"
+2026-06-16 13:30:41.073 [background-preinit] INFO  o.h.validator.internal.util.Version trace=,span= - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-16 13:30:41.612 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace=,span= - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-16 13:30:41.718 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace=,span= - Finished Spring Data repository scanning in 99 ms. Found 1 JPA repository interface.
+2026-06-16 13:30:41.885 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor trace=,span= - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2026-06-16 13:30:41.890 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor trace=,span= - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2026-06-16 13:30:42.593 [main] INFO  o.s.boot.tomcat.TomcatWebServer trace=,span= - Tomcat initialized with port 8080 (http)
+2026-06-16 13:30:42.604 [main] INFO  o.a.coyote.http11.Http11NioProtocol trace=,span= - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-16 13:30:42.605 [main] INFO  o.a.catalina.core.StandardService trace=,span= - Starting service [Tomcat]
+2026-06-16 13:30:42.605 [main] INFO  o.a.catalina.core.StandardEngine trace=,span= - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-16 13:30:42.629 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer trace=,span= - Root WebApplicationContext: initialization completed in 1871 ms
+2026-06-16 13:30:43.003 [main] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Starting...
+2026-06-16 13:30:43.117 [main] INFO  com.zaxxer.hikari.pool.HikariPool trace=,span= - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:orderdb user=SA
+2026-06-16 13:30:43.119 [main] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Start completed.
+2026-06-16 13:30:43.249 [main] INFO  org.hibernate.orm.jpa trace=,span= - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-16 13:30:43.312 [main] INFO  org.hibernate.orm.core trace=,span= - HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-16 13:30:43.737 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo trace=,span= - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-16 13:30:43.807 [main] INFO  o.hibernate.orm.connections.pooling trace=,span= - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:orderdb]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: ORDERDB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-16 13:30:44.544 [main] INFO  org.hibernate.orm.core trace=,span= - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-16 13:30:44.549 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace=,span= - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-16 13:30:44.826 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories trace=,span= - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-16 13:30:45.984 [main] WARN  i.m.c.i.b.cache.CaffeineCacheMetrics trace=,span= - The cache 'tenants' is not recording statistics. No meters except 'cache.size' will be registered. Call 'Caffeine#recordStats()' prior to building the cache for metrics to be recorded.
+2026-06-16 13:30:45.986 [main] WARN  i.m.c.i.b.cache.CaffeineCacheMetrics trace=,span= - The cache 'orders' is not recording statistics. No meters except 'cache.size' will be registered. Call 'Caffeine#recordStats()' prior to building the cache for metrics to be recorded.
+2026-06-16 13:30:46.307 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver trace=,span= - Exposing 1 endpoint beneath base path '/actuator'
+2026-06-16 13:30:46.435 [main] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-06-16 13:30:46.435 [main] INFO  o.s.i.c.PublishSubscribeChannel trace=,span= - Channel 'order-service.errorChannel' has 1 subscriber(s).
+2026-06-16 13:30:46.435 [main] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - started bean '_org.springframework.integration.errorLogger'
+2026-06-16 13:30:46.435 [main] INFO  o.a.coyote.http11.Http11NioProtocol trace=,span= - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-16 13:30:46.442 [main] INFO  o.s.boot.tomcat.TomcatWebServer trace=,span= - Tomcat started on port 8080 (http) with context path '/'
+2026-06-16 13:30:46.453 [main] INFO  c.l.order.OrderServiceApplication trace=,span= - Started OrderServiceApplication in 6.232 seconds (process running for 6.725)
+2026-06-16 13:30:46.497 [main] WARN  o.s.c.events.SpringDocAppInitializer trace=,span= - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-16 13:30:46.497 [main] WARN  o.s.c.events.SpringDocAppInitializer trace=,span= - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-16 13:30:56.496 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown trace=,span= - Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16 13:30:56.504 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown trace=,span= - Graceful shutdown complete
+2026-06-16 13:30:56.506 [SpringApplicationShutdownHook] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-06-16 13:30:56.507 [SpringApplicationShutdownHook] INFO  o.s.i.c.PublishSubscribeChannel trace=,span= - Channel 'order-service.errorChannel' has 0 subscriber(s).
+2026-06-16 13:30:56.507 [SpringApplicationShutdownHook] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - stopped bean '_org.springframework.integration.errorLogger'
+2026-06-16 13:30:56.519 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace=,span= - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-16 13:30:56.521 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Shutdown initiated...
+2026-06-16 13:30:56.522 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Shutdown completed.

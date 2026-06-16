@@ -1,0 +1,419 @@
+2026-06-15 22:35:32.196 [main] INFO  c.l.order.OrderServiceApplication trace=,span= - Starting OrderServiceApplication v0.0.1-SNAPSHOT using Java 25.0.2 with PID 20674 (/Users/Dzianis_Padbiarezski/projects/loadup/order-service/order-service-app/build/libs/order-service-app-0.0.1-SNAPSHOT.jar started by Dzianis_Padbiarezski in /Users/Dzianis_Padbiarezski/projects/loadup/order-service/order-service-app)
+2026-06-15 22:35:32.202 [main] INFO  c.l.order.OrderServiceApplication trace=,span= - No active profile set, falling back to 1 default profile: "default"
+2026-06-15 22:35:32.546 [background-preinit] INFO  o.h.validator.internal.util.Version trace=,span= - HV000001: Hibernate Validator 9.0.1.Final
+2026-06-15 22:35:33.087 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace=,span= - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-15 22:35:33.194 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace=,span= - Finished Spring Data repository scanning in 98 ms. Found 1 JPA repository interface.
+2026-06-15 22:35:33.364 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor trace=,span= - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2026-06-15 22:35:33.369 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor trace=,span= - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2026-06-15 22:35:34.090 [main] INFO  o.s.boot.tomcat.TomcatWebServer trace=,span= - Tomcat initialized with port 8080 (http)
+2026-06-15 22:35:34.100 [main] INFO  o.a.coyote.http11.Http11NioProtocol trace=,span= - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-15 22:35:34.101 [main] INFO  o.a.catalina.core.StandardService trace=,span= - Starting service [Tomcat]
+2026-06-15 22:35:34.101 [main] INFO  o.a.catalina.core.StandardEngine trace=,span= - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-15 22:35:34.126 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer trace=,span= - Root WebApplicationContext: initialization completed in 1879 ms
+2026-06-15 22:35:34.589 [main] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Starting...
+2026-06-15 22:35:34.721 [main] INFO  com.zaxxer.hikari.pool.HikariPool trace=,span= - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:orderdb user=SA
+2026-06-15 22:35:34.722 [main] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Start completed.
+2026-06-15 22:35:34.844 [main] INFO  org.hibernate.orm.jpa trace=,span= - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-15 22:35:34.899 [main] INFO  org.hibernate.orm.core trace=,span= - HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-15 22:35:35.279 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo trace=,span= - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-15 22:35:35.347 [main] INFO  o.hibernate.orm.connections.pooling trace=,span= - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:orderdb]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: ORDERDB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-15 22:35:36.045 [main] INFO  org.hibernate.orm.core trace=,span= - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-15 22:35:36.050 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace=,span= - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-15 22:35:36.320 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories trace=,span= - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-15 22:35:37.492 [main] WARN  i.m.c.i.b.cache.CaffeineCacheMetrics trace=,span= - The cache 'tenants' is not recording statistics. No meters except 'cache.size' will be registered. Call 'Caffeine#recordStats()' prior to building the cache for metrics to be recorded.
+2026-06-15 22:35:37.495 [main] WARN  i.m.c.i.b.cache.CaffeineCacheMetrics trace=,span= - The cache 'orders' is not recording statistics. No meters except 'cache.size' will be registered. Call 'Caffeine#recordStats()' prior to building the cache for metrics to be recorded.
+2026-06-15 22:35:37.824 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver trace=,span= - Exposing 1 endpoint beneath base path '/actuator'
+2026-06-15 22:35:37.941 [main] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-06-15 22:35:37.941 [main] INFO  o.s.i.c.PublishSubscribeChannel trace=,span= - Channel 'order-service.errorChannel' has 1 subscriber(s).
+2026-06-15 22:35:37.941 [main] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - started bean '_org.springframework.integration.errorLogger'
+2026-06-15 22:35:37.941 [main] INFO  o.a.coyote.http11.Http11NioProtocol trace=,span= - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-15 22:35:37.949 [main] INFO  o.s.boot.tomcat.TomcatWebServer trace=,span= - Tomcat started on port 8080 (http) with context path '/'
+2026-06-15 22:35:37.961 [main] INFO  c.l.order.OrderServiceApplication trace=,span= - Started OrderServiceApplication in 6.27 seconds (process running for 6.76)
+2026-06-15 22:35:38.019 [main] WARN  o.s.c.events.SpringDocAppInitializer trace=,span= - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-15 22:35:38.019 [main] WARN  o.s.c.events.SpringDocAppInitializer trace=,span= - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-15 22:36:03.688 [tomcat-handler-0] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] trace=,span= - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-15 22:36:03.689 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet trace=,span= - Initializing Servlet 'dispatcherServlet'
+2026-06-15 22:36:03.695 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet trace=,span= - Completed initialization in 5 ms
+2026-06-15 22:36:04.017 [tomcat-handler-0] INFO  com.loadup.order.api.OrderApi trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Received request to create order with tenantId: dzianis-tech-inc
+2026-06-15 22:36:04.028 [tomcat-handler-0] INFO  c.loadup.order.service.TenantService trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Initiating tenant context: tenantId=dzianis-tech-inc
+2026-06-15 22:36:04.085 [tomcat-handler-0] INFO  c.loadup.order.service.TenantService trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Tenant loaded from database and cached: tenantId=dzianis-tech-inc
+2026-06-15 22:36:04.085 [tomcat-handler-0] INFO  c.loadup.order.service.TenantService trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Tenant context initiated successfully: tenantId=dzianis-tech-inc, tenantName=Inc.
+2026-06-15 22:36:04.193 [order-async-1] INFO  o.s.c.s.binder.DefaultBinderFactory trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Creating binder: kafka
+2026-06-15 22:36:04.206 [order-async-1] INFO  o.s.c.s.binder.DefaultBinderFactory trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Constructing binder child context for kafka
+2026-06-15 22:36:04.429 [order-async-1] INFO  o.s.c.s.binder.DefaultBinderFactory trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Caching the binder: kafka
+2026-06-15 22:36:04.435 [order-async-1] INFO  o.s.c.s.b.k.p.KafkaTopicProvisioner trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Using kafka topic for outbound: order-events
+2026-06-15 22:36:04.441 [order-async-1] INFO  o.a.k.common.config.AbstractConfig trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - AdminClientConfig values: 
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = false
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2026-06-15 22:36:04.522 [order-async-1] INFO  o.a.kafka.common.utils.AppInfoParser trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Kafka version: 4.1.2
+2026-06-15 22:36:04.522 [order-async-1] INFO  o.a.kafka.common.utils.AppInfoParser trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Kafka commitId: c82fd9b934b4c1e6
+2026-06-15 22:36:04.522 [order-async-1] INFO  o.a.kafka.common.utils.AppInfoParser trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Kafka startTimeMs: 1781577364521
+2026-06-15 22:36:04.930 [order-async-1] INFO  o.a.kafka.common.metrics.Metrics trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Metrics scheduler closed
+2026-06-15 22:36:04.930 [order-async-1] INFO  o.a.kafka.common.metrics.Metrics trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-06-15 22:36:04.930 [order-async-1] INFO  o.a.kafka.common.metrics.Metrics trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Metrics reporters closed
+2026-06-15 22:36:04.931 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser trace=,span= - App info kafka.admin.client for adminclient-1 unregistered
+2026-06-15 22:36:04.938 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics trace=,span= - Metrics scheduler closed
+2026-06-15 22:36:04.938 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics trace=,span= - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-06-15 22:36:04.939 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics trace=,span= - Metrics reporters closed
+2026-06-15 22:36:04.956 [order-async-1] INFO  o.a.k.common.config.AbstractConfig trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 5000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 0
+	max.block.ms = 3000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 2000
+	reconnect.backoff.ms = 500
+	request.timeout.ms = 2000
+	retries = 2
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 200
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transaction.two.phase.commit.enable = false
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2026-06-15 22:36:04.979 [order-async-1] INFO  o.a.k.c.t.i.KafkaMetricsCollector trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - initializing Kafka metrics collector
+2026-06-15 22:36:04.990 [order-async-1] INFO  o.a.k.clients.producer.KafkaProducer trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2026-06-15 22:36:05.008 [order-async-1] INFO  o.a.kafka.common.utils.AppInfoParser trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Kafka version: 4.1.2
+2026-06-15 22:36:05.008 [order-async-1] INFO  o.a.kafka.common.utils.AppInfoParser trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Kafka commitId: c82fd9b934b4c1e6
+2026-06-15 22:36:05.008 [order-async-1] INFO  o.a.kafka.common.utils.AppInfoParser trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Kafka startTimeMs: 1781577365008
+2026-06-15 22:36:05.040 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata trace=,span= - [Producer clientId=producer-1] Cluster ID: 5L6g3nShT-eMCtK--X86sw
+2026-06-15 22:36:05.256 [kafka-producer-network-thread | producer-1] INFO  o.a.k.c.p.i.TransactionManager trace=,span= - [Producer clientId=producer-1] ProducerId set to 1000 with epoch 0
+2026-06-15 22:36:05.264 [order-async-1] INFO  o.s.c.s.m.DirectWithAttributesChannel trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Channel 'order-service.orderEvents-out-0' has 1 subscriber(s).
+2026-06-15 22:36:05.297 [order-async-1] INFO  c.l.o.messaging.OrderKafkaPublisher trace=c90badce3e2eec64fdc74314a5d77121,span=9600e2f999b98951 - Order event published for tenantId=dzianis-tech-inc, orderId=12b3a572-e50d-49e9-8799-cf13504c8b8e, status=CREATED
+2026-06-15 22:39:59.423 [tomcat-handler-2] INFO  com.loadup.order.api.OrderApi trace=17a1460a7b30e035a9e4be2c17b81a64,span=c4dfd44bd56a0817 - Received request to create order with tenantId: dzianis-tech-inc
+2026-06-15 22:39:59.427 [tomcat-handler-2] INFO  c.loadup.order.service.TenantService trace=17a1460a7b30e035a9e4be2c17b81a64,span=c4dfd44bd56a0817 - Initiating tenant context: tenantId=dzianis-tech-inc
+2026-06-15 22:39:59.486 [tomcat-handler-2] WARN  c.l.order.cache.TenantCacheService trace=17a1460a7b30e035a9e4be2c17b81a64,span=c4dfd44bd56a0817 - Failed to deserialize cached tenant: tenantId=dzianis-tech-inc
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `com.loadup.order.repository.model.TenantEntity` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 2]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1935)
+	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:481)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1422)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1514)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:340)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:5052)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3954)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3922)
+	at com.loadup.order.cache.TenantCacheService.getTenant(TenantCacheService.java:46)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at io.github.resilience4j.circuitbreaker.CircuitBreaker.lambda$decorateCheckedSupplier$0(CircuitBreaker.java:71)
+	at io.github.resilience4j.circuitbreaker.CircuitBreaker.executeCheckedSupplier(CircuitBreaker.java:739)
+	at io.github.resilience4j.spring6.circuitbreaker.configure.CircuitBreakerAspect.defaultHandling(CircuitBreakerAspect.java:179)
+	at io.github.resilience4j.spring6.circuitbreaker.configure.CircuitBreakerAspect.proceed(CircuitBreakerAspect.java:126)
+	at io.github.resilience4j.spring6.circuitbreaker.configure.CircuitBreakerAspect.lambda$circuitBreakerAroundAdvice$0(CircuitBreakerAspect.java:108)
+	at io.github.resilience4j.spring6.fallback.FallbackExecutor.execute(FallbackExecutor.java:37)
+	at io.github.resilience4j.spring6.circuitbreaker.configure.CircuitBreakerAspect.circuitBreakerAroundAdvice(CircuitBreakerAspect.java:109)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:168)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at io.github.resilience4j.retry.Retry.lambda$decorateCheckedSupplier$1(Retry.java:135)
+	at io.github.resilience4j.retry.Retry.executeCheckedSupplier(Retry.java:350)
+	at io.github.resilience4j.spring6.retry.configure.RetryAspect.handleDefaultJoinPoint(RetryAspect.java:175)
+	at io.github.resilience4j.spring6.retry.configure.RetryAspect.proceed(RetryAspect.java:132)
+	at io.github.resilience4j.spring6.retry.configure.RetryAspect.lambda$retryAroundAdvice$0(RetryAspect.java:116)
+	at io.github.resilience4j.spring6.fallback.DefaultFallbackDecorator.lambda$decorate$0(DefaultFallbackDecorator.java:36)
+	at io.github.resilience4j.spring6.fallback.FallbackExecutor.execute(FallbackExecutor.java:39)
+	at io.github.resilience4j.spring6.retry.configure.RetryAspect.retryAroundAdvice(RetryAspect.java:117)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:168)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at com.loadup.order.cache.TenantCacheService$$SpringCGLIB$$0.getTenant(<generated>)
+	at com.loadup.order.service.TenantService.getTenantOrThrow(TenantService.java:28)
+	at com.loadup.order.service.TenantService.initiateTenantContext(TenantService.java:45)
+	at com.loadup.order.service.OrderService.createOrder(OrderService.java:46)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:133)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:371)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at com.loadup.order.service.OrderService$$SpringCGLIB$$0.createOrder(<generated>)
+	at com.loadup.order.controller.OrderController.createOrder(OrderController.java:36)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:172)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at com.loadup.order.controller.OrderController$$SpringCGLIB$$0.createOrder(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:110)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:456)
+2026-06-15 22:39:59.496 [tomcat-handler-2] INFO  c.loadup.order.service.TenantService trace=17a1460a7b30e035a9e4be2c17b81a64,span=c4dfd44bd56a0817 - Tenant loaded from database and cached: tenantId=dzianis-tech-inc
+2026-06-15 22:39:59.496 [tomcat-handler-2] INFO  c.loadup.order.service.TenantService trace=17a1460a7b30e035a9e4be2c17b81a64,span=c4dfd44bd56a0817 - Tenant context initiated successfully: tenantId=dzianis-tech-inc, tenantName=Inc.
+2026-06-15 22:39:59.508 [order-async-2] INFO  c.l.o.messaging.OrderKafkaPublisher trace=17a1460a7b30e035a9e4be2c17b81a64,span=c4dfd44bd56a0817 - Order event published for tenantId=dzianis-tech-inc, orderId=3b7a8b7e-d52b-43f4-9ed7-ef874ebe4614, status=CREATED
+2026-06-15 22:45:50.328 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown trace=,span= - Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-15 22:45:52.368 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown trace=,span= - Graceful shutdown complete
+2026-06-15 22:45:52.371 [SpringApplicationShutdownHook] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-06-15 22:45:52.371 [SpringApplicationShutdownHook] INFO  o.s.i.c.PublishSubscribeChannel trace=,span= - Channel 'order-service.errorChannel' has 0 subscriber(s).
+2026-06-15 22:45:52.371 [SpringApplicationShutdownHook] INFO  o.s.i.endpoint.EventDrivenConsumer trace=,span= - stopped bean '_org.springframework.integration.errorLogger'
+2026-06-15 22:45:52.384 [SpringApplicationShutdownHook] INFO  o.a.k.clients.producer.KafkaProducer trace=,span= - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2026-06-15 22:45:52.388 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics trace=,span= - Metrics scheduler closed
+2026-06-15 22:45:52.389 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics trace=,span= - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-06-15 22:45:52.389 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics trace=,span= - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-06-15 22:45:52.389 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics trace=,span= - Metrics reporters closed
+2026-06-15 22:45:52.390 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.utils.AppInfoParser trace=,span= - App info kafka.producer for producer-1 unregistered
+2026-06-15 22:45:52.393 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace=,span= - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-15 22:45:52.397 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Shutdown initiated...
+2026-06-15 22:45:52.398 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource trace=,span= - HikariPool-1 - Shutdown completed.

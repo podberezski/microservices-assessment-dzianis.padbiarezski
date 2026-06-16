@@ -1,0 +1,8 @@
+rootProject.name = 'notification-service'
+
+includeBuild('../common-logging-starter') {
+	dependencySubstitution {
+		substitute module('com.loadup:common-logging-starter') using project(':' )
+	}
+}
+

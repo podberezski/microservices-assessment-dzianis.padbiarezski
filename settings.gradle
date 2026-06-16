@@ -1,0 +1,6 @@
+rootProject.name = 'order-service'
+
+include 'order-service-app'
+include 'common-logging-starter'
+include 'notification-service'
+

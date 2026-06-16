@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: notification-service
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+  cloud:
+    stream:
+      function:
+        definition: orderUpdateConsumer
+      bindings:
+        orderUpdateConsumer-in-0:
+          destination: ${ORDER_EVENTS_TOPIC:order-events}
+          group: ${ORDER_EVENTS_GROUP:notification-service-group}
+          binder: kafka
+          content-type: application/json
+      kafka:
+        binder:
+          brokers: ${KAFKA_BROKERS:localhost:9092}
+          auto-create-topics: false
+          configuration:
+            client.id: ${KAFKA_CLIENT_ID:notification-service}
+        bindings:
+          orderUpdateConsumer-in-0:
+            consumer:
+              ack-mode: MANUAL
+              auto-commit-offset: false
+              start-offset: earliest
+              enable-dlq: true
+              dlq-name: ${ORDER_EVENTS_DLT:order-events.dlt}
+              dlq-producer-properties:
+                configuration:
+                  key.serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+                  value.serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+
+logging:
+  level:
+    root: INFO
+    com.loadup.notification: DEBUG
+    org.springframework.kafka: ERROR
+    org.springframework.cloud.stream: ERROR
+
+server:
+  port: 8081

@@ -1,0 +1,15 @@
+FROM eclipse-temurin:25-jdk
+
+WORKDIR /app
+
+# Create non-root user
+RUN addgroup --system spring && adduser --system spring --ingroup spring
+USER spring:spring
+
+COPY build/libs/notification-service-0.0.1-SNAPSHOT.jar app.jar
+
+ENV SPRING_PROFILES_ACTIVE=docker
+
+EXPOSE 8081
+
+ENTRYPOINT ["java", "-jar", "app.jar"]

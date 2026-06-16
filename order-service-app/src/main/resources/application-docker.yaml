@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: order-service
+
+app:
+  h2:
+    tcp:
+      enabled: true
+      port: 9094
+  kafka:
+    order-events:
+      bootstrap-servers: kafka:29092
+
