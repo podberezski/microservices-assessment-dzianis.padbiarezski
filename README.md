@@ -186,7 +186,7 @@ The Order Service is a **multi-tenant, event-driven microservices system** desig
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd order-service
+cd microservices-assessment-dzianis.padbiarezski
 
 # Build the entire project
 ./gradlew build
